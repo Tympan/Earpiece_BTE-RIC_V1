@@ -10,6 +10,13 @@
   )
 
   (page USLetter)
+  (title_block
+    (title "Tympan BTE Flex Circuit Board")
+    (date 2019-09-18)
+    (rev V1)
+    (company "Solutions Design & Prototyping")
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)

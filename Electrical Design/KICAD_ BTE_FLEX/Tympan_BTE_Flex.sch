@@ -1,12 +1,11 @@
 EESchema Schematic File Version 4
-LIBS:Tympan_BTE_Flex-cache
 EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "BTE Flexi Circuit"
-Date "2019-06-25"
+Date "2019-09-18"
 Rev "V 01"
 Comp "Solutions Deisgn & Prototyping"
 Comment1 ""
