@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Tympan_BTE_Flex)(type KiCad)(uri ${KIPRJMOD}/Library/Tympan_BTE_Flex.pretty)(options "")(descr ""))
+)

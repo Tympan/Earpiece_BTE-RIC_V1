@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Tympan_BTE_Flex)(type Legacy)(uri ${KIPRJMOD}/Library/Tympan_BTE_Flex.lib)(options "")(descr ""))
+)
