@@ -1,0 +1,182 @@
+EESchema Schematic File Version 4
+LIBS:Tympan_BTE_RIGID-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x06_Female J2
+U 1 1 5D828575
+P 5700 3850
+F 0 "J2" H 5550 4200 50  0000 L CNN
+F 1 "FPC Connector" H 5500 3450 50  0000 L CNN
+F 2 "Tympan_BTE_RIGID:10062827-0410EDHLF" H 5700 3850 50  0001 C CNN
+F 3 "~" H 5700 3850 50  0001 C CNN
+	1    5700 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Female J1
+U 1 1 5D828F54
+P 4250 3850
+F 0 "J1" H 4100 4200 50  0000 L CNN
+F 1 "Input Wire Connector" H 4050 3450 50  0000 L CNN
+F 2 "Tympan_BTE_RIGID:BTE_INPUT" H 4250 3850 50  0001 C CNN
+F 3 "~" H 4250 3850 50  0001 C CNN
+	1    4250 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x04_Female J3
+U 1 1 5D8296F0
+P 6700 3850
+F 0 "J3" H 6550 4100 50  0000 L CNN
+F 1 "CS44 Connector" H 6500 3550 50  0000 L CNN
+F 2 "Tympan_BTE_RIGID:CS44" H 6700 3850 50  0001 C CNN
+F 3 "~" H 6700 3850 50  0001 C CNN
+	1    6700 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5D8321DD
+P 5300 4250
+F 0 "#PWR04" H 5300 4000 50  0001 C CNN
+F 1 "GND" H 5305 4077 50  0000 C CNN
+F 2 "" H 5300 4250 50  0001 C CNN
+F 3 "" H 5300 4250 50  0001 C CNN
+	1    5300 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5D832799
+P 3800 4250
+F 0 "#PWR02" H 3800 4000 50  0001 C CNN
+F 1 "GND" H 3805 4077 50  0000 C CNN
+F 2 "" H 3800 4250 50  0001 C CNN
+F 3 "" H 3800 4250 50  0001 C CNN
+	1    3800 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR01
+U 1 1 5D83326D
+P 3800 3400
+F 0 "#PWR01" H 3800 3250 50  0001 C CNN
+F 1 "+3V3" H 3815 3573 50  0000 C CNN
+F 2 "" H 3800 3400 50  0001 C CNN
+F 3 "" H 3800 3400 50  0001 C CNN
+	1    3800 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR03
+U 1 1 5D833BA9
+P 5150 3400
+F 0 "#PWR03" H 5150 3250 50  0001 C CNN
+F 1 "+3V3" H 5165 3573 50  0000 C CNN
+F 2 "" H 5150 3400 50  0001 C CNN
+F 3 "" H 5150 3400 50  0001 C CNN
+	1    5150 3400
+	1    0    0    -1  
+$EndComp
+Text Label 4750 3500 2    50   ~ 0
+DATA
+Text Label 5500 3750 2    50   ~ 0
+CLK
+Wire Wire Line
+	5300 4250 5300 4150
+Wire Wire Line
+	5500 4050 5300 4050
+Connection ~ 5300 4050
+Wire Wire Line
+	5500 4150 5300 4150
+Connection ~ 5300 4150
+Wire Wire Line
+	5300 4150 5300 4050
+NoConn ~ 6500 3750
+NoConn ~ 6500 3850
+Text Label 6500 3950 2    50   ~ 0
+SPK-
+Text Label 6500 4050 2    50   ~ 0
+SPK+
+Text Label 4050 4150 2    50   ~ 0
+SPK-
+Text Label 4050 4050 2    50   ~ 0
+SPK+
+Text Label 4050 3750 2    50   ~ 0
+CLK
+Text Label 4050 3650 2    50   ~ 0
+DATA
+Wire Wire Line
+	3800 4250 3800 4150
+Wire Wire Line
+	3800 3400 3800 3600
+Wire Wire Line
+	5300 3650 5500 3650
+Wire Wire Line
+	5300 3650 5300 4050
+Wire Wire Line
+	5150 3850 5500 3850
+Wire Wire Line
+	5150 3400 5150 3850
+$Comp
+L Device:C C1
+U 1 1 5D84711B
+P 3500 3900
+F 0 "C1" H 3300 4000 50  0000 L CNN
+F 1 "220nF" H 3250 3800 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0201_0603Metric" H 3538 3750 50  0001 C CNN
+F 3 "~" H 3500 3900 50  0001 C CNN
+	1    3500 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 3750 3500 3600
+Wire Wire Line
+	3500 3600 3800 3600
+Connection ~ 3800 3600
+Wire Wire Line
+	3500 4050 3500 4150
+Wire Wire Line
+	3500 4150 3800 4150
+Connection ~ 3800 4150
+$Comp
+L Device:R R1
+U 1 1 5D847DEF
+P 4900 3700
+F 0 "R1" H 4970 3746 50  0000 L CNN
+F 1 "50R" H 4970 3655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0201_0603Metric" V 4830 3700 50  0001 C CNN
+F 3 "~" H 4900 3700 50  0001 C CNN
+	1    4900 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3550 4900 3500
+Wire Wire Line
+	4900 3500 4750 3500
+Wire Wire Line
+	4900 3850 4900 3950
+Wire Wire Line
+	4900 3950 5500 3950
+Wire Wire Line
+	3800 3950 4050 3950
+Wire Wire Line
+	3800 3950 3800 4150
+Wire Wire Line
+	3800 3850 4050 3850
+Wire Wire Line
+	3800 3600 3800 3850
+$EndSCHEMATC

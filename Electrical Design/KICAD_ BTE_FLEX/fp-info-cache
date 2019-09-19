@@ -1,4 +1,4 @@
-16370527159127158
+16368973258206126
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -72407,34 +72407,27 @@ transformer flyback
 0
 10
 10
-Tympan_BTE_Flex
-4pos-0.5mmpitch-FPC-Connector
+Tympan_BTE_RIGID
+10062827-0410EDHLF
+
+
+0
+6
+6
+Tympan_BTE_RIGID
+BTE_INPUT
+
+
+0
+6
+6
+Tympan_BTE_RIGID
+CS44
 
 
 0
 4
 4
-Tympan_BTE_Flex
-10062827-0410EDHLF FPC Flex
-
-
-0
-4
-4
-Tympan_BTE_Flex
-BTE_FPC
-
-
-0
-4
-4
-Tympan_BTE_Flex
-IM69D130
-
-
-0
-5
-5
 Valve
 Valve_ECC-83-1
 Valve ECC-83-1 round pins
