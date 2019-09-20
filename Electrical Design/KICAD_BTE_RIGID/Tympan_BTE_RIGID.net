@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source /Users/biomurph/Documents/KiCad/Tympan_BTE_RIGID/Tympan_BTE_RIGID.sch)
-    (date "Thursday, September 19, 2019 at 03:47:49 PM")
+    (source "/Users/biomurph/Tympan_github/Earpiece_BTE-RIC_V1/Electrical Design/KICAD_BTE_RIGID/Tympan_BTE_RIGID.sch")
+    (date "Friday, September 20, 2019 at 02:37:50 PM")
     (tool "Eeschema (5.1.4-0-10_14)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -124,10 +124,10 @@
       (node (ref J3) (pin 1)))
     (net (code 5) (name "Net-(J3-Pad2)")
       (node (ref J3) (pin 2)))
-    (net (code 6) (name /SPK-)
+    (net (code 6) (name /SPK+)
       (node (ref J3) (pin 3))
       (node (ref J1) (pin 6)))
-    (net (code 7) (name /SPK+)
+    (net (code 7) (name /SPK-)
       (node (ref J3) (pin 4))
       (node (ref J1) (pin 5)))
     (net (code 8) (name /DATA)
