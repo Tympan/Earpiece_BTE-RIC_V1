@@ -181,4 +181,14 @@ Wire Wire Line
 	3800 3600 3800 3850
 Text Notes 4300 4200 0    63   ~ 0
 WHT\nBLU\nRED\nBLK\nGRN\nYEL
+Text Notes 3100 5100 0    50   ~ 0
+THICKNESS OF PCB NO TO EXCEED 0.65mm (-0.03mm)
+Wire Notes Line
+	3000 4900 5350 4900
+Wire Notes Line
+	5350 4900 5350 5250
+Wire Notes Line
+	5350 5250 3000 5250
+Wire Notes Line
+	3000 5250 3000 4900
 $EndSCHEMATC
