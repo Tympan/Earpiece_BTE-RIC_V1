@@ -12,7 +12,8 @@
 //
 
 //here are the libraries that we need
-#include <Tympan_Library.h>  //include the Tympan Library
+#include <Tympan_Library.h>   //include the Tympan Library
+#include "MixerFunctions.h"   //functions for choosing inputs and doing the front-back mixing
 
 //set the sample rate and block size
 const float sample_rate_Hz = 44100.0f ;  //24000 to 44117 to 96000 (or other frequencies in the table in AudioOutputI2S_F32)
@@ -31,16 +32,16 @@ AudioOutputI2SQuad_F32  i2s_out(audio_settings);        //Send audio out
 AudioSDWriter_F32       audioSDWriter(audio_settings);  //Write audio to the SD card (if activated)
 
 //Connect the front and rear mics (from each earpiece) to input mixer for the left ear
-AudioConnection_F32     patchcord1(i2s_in, EarpieceShield::PDM_LEFT_FRONT,  inputMixerL, 0);    //Left-Front Mic
-AudioConnection_F32     patchcord2(i2s_in, EarpieceShield::PDM_LEFT_REAR,   inputMixerL, 1);    //Left-Rear Mic
-//AudioConnection_F32     patchcord3(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerL, 2);    //Right-Front Mic
-//AudioConnection_F32     patchcord4(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerL, 3);    //Right-Rear Mic
+AudioConnection_F32     patchcord1(i2s_in, EarpieceShield::PDM_LEFT_FRONT,  inputMixerL, LEFT_FRONT);    //Left-Front Mic
+AudioConnection_F32     patchcord2(i2s_in, EarpieceShield::PDM_LEFT_REAR,   inputMixerL, LEFT_REAR);    //Left-Rear Mic
+//AudioConnection_F32     patchcord3(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerL, RIGHT_FRONT);    //Right-Front Mic
+//AudioConnection_F32     patchcord4(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerL, RIGHT_REAR);    //Right-Rear Mic
 
 //Connect the front and rear mics (from each earpiece) to input mixer for the right ear
-AudioConnection_F32     patchcord5(i2s_in, EarpieceShield::PDM_LEFT_FRONT,  inputMixerR, 0);    //Left-Front Mic
-AudioConnection_F32     patchcord6(i2s_in, EarpieceShield::PDM_LEFT_REAR,   inputMixerR, 1);    //Left-Rear Mic
-//AudioConnection_F32     patchcord7(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerR, 2);    //Right-Front Mic
-//AudioConnection_F32     patchcord8(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerR, 3);    //Right-Rear Mic
+AudioConnection_F32     patchcord5(i2s_in, EarpieceShield::PDM_LEFT_FRONT,  inputMixerR, LEFT_FRONT);    //Left-Front Mic
+AudioConnection_F32     patchcord6(i2s_in, EarpieceShield::PDM_LEFT_REAR,   inputMixerR, LEFT_REAR);    //Left-Rear Mic
+//AudioConnection_F32     patchcord7(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerR, RIGHT_FRONT);    //Right-Front Mic
+//AudioConnection_F32     patchcord8(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerR, RIGHT_REAR);    //Right-Rear Mic
 
 //Connect the input mixers to both the Tympan and Shield audio outputs...which i2s output is associated with each audio output is in EarpieceShield.cpp  
 AudioConnection_F32     patchcord11(inputMixerL, 0, i2s_out, EarpieceShield::OUTPUT_LEFT_TYMPAN);    //Tympan AIC, left output
@@ -53,10 +54,6 @@ AudioConnection_F32     patchcord21(i2s_in, EarpieceShield::PDM_LEFT_FRONT,  aud
 AudioConnection_F32     patchcord22(i2s_in, EarpieceShield::PDM_LEFT_REAR,   audioSDWriter, 1);   //connect Raw audio to SD writer
 AudioConnection_F32     patchcord23(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, audioSDWriter, 2);   //connect Raw audio to SD writer
 AudioConnection_F32     patchcord24(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  audioSDWriter, 3);   //connect Raw audio to SD writer
-
-// //////////////// Manually define our own functions for choosing inputs and doing the front-back mixing
-#include "MixerFunctions.h"  // for setInputSource() and for setInputMixer()
-
 
 // //////////////// Control display and serial interaction via USB Serial
 #include "State.h"                          //For enums

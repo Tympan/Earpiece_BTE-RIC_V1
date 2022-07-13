@@ -1,10 +1,19 @@
 
 #include "State.h"
 
+#define LEFT_FRONT  0
+#define LEFT_REAR   1
+#define RIGHT_FRONT 2
+#define RIGHT_REAR  3
+
+extern Tympan myTympan;
+extern EarpieceShield earpieceShield;
+extern AudioMixer4_F32 inputMixerL;
+extern AudioMixer4_F32 inputMixerR;
+
 //set the desired input source 
 void setInputSource(int micInput) { 
   switch (micInput) {
-    
     case INPUT_PCBMICS:
       //Select Input
       myTympan.inputSelect(TYMPAN_INPUT_ON_BOARD_MIC); // use the on-board microphones
@@ -43,9 +52,7 @@ void setInputSource(int micInput) {
 
 //Sets the input mixer gain for a given mic channel.  
 //Mixes between front and rear microphone of each earpiece
-void setInputMixer(int micChannelName, float gainVal) {
-  const int LEFT_FRONT=0, LEFT_REAR=1, RIGHT_FRONT=2, RIGHT_REAR=3;
-     
+void setInputMixer(int micChannelName, float gainVal) {     
   //initialize to muted
   inputMixerL.gain(LEFT_FRONT, 0.0);
   inputMixerL.gain(LEFT_REAR,  0.0);
@@ -105,9 +112,7 @@ void setInputMixer(int micChannelName, float gainVal) {
     case MIC_FRONT_TO_LEFT_REAR_TO_RIGHT:
       Serial.print("Front Mics output to Left Side, Rear Mics to Right Side. Frt/Rear: Gain ");
       inputMixerL.gain(LEFT_FRONT,  gainVal);
-      //inputMixerL.gain(RIGHT_FRONT, gainVal);
-      inputMixerR.gain(LEFT_REAR,   gainVal); 
-      //inputMixerR.gain(RIGHT_REAR,  gainVal); 
+      inputMixerR.gain(LEFT_REAR,   gainVal);
       break;     
   }
   Serial.println(gainVal);
