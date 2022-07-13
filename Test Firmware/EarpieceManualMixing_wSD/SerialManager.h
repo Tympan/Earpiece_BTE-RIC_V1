@@ -47,6 +47,9 @@ void SerialManager::printHelp(void) {
   Serial.println("  7  : Mixer: Switch to Tympan AIC only (L,R)");
   Serial.println("  8  : Mixer: Switch to Earpiece Shield AIC only (L,R)");
   Serial.println("  9  : Mixer: Switch to Mixing Front+Rear Mics (L,R)");
+  Serial.println("  0  : Mute all Earpiece Mics ");
+  Serial.println("  t  : Mixer: Route Earpiece Front Mics to Left channel, Earpiece Rear Mics to Right Channel");
+
   Serial.println();
 }
 
@@ -143,7 +146,11 @@ void SerialManager::respondToByte(char c) {
     case '0':
       Serial.println("Received: Mute all earpiece mics");
       setInputMixer(ALL_MICS, 0.0);
-      break;      
+      break;    
+    case 't':
+      Serial.println("Received: Test Setting: Route Front to Left Channel, Rear to Right Channel");
+      setInputMixer(MIC_FRONT_TO_LEFT_REAR_TO_RIGHT, 0.5  );
+      break;       
   }
 }
 

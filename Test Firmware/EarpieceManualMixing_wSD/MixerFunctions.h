@@ -104,10 +104,10 @@ void setInputMixer(int micChannelName, float gainVal) {
     // For testing, sends the front mic to the left output, and the rear mics to the right output
     case MIC_FRONT_TO_LEFT_REAR_TO_RIGHT:
       Serial.print("Front Mics output to Left Side, Rear Mics to Right Side. Frt/Rear: Gain ");
-      inputMixerL.gain(LEFT_FRONT,gainVal);
-      inputMixerL.gain(RIGHT_FRONT,gainVal);
-      inputMixerR.gain(LEFT_REAR,gainVal); 
-      inputMixerR.gain(RIGHT_REAR,gainVal); 
+      inputMixerL.gain(LEFT_FRONT,  gainVal);
+      //inputMixerL.gain(RIGHT_FRONT, gainVal);
+      inputMixerR.gain(LEFT_REAR,   gainVal); 
+      //inputMixerR.gain(RIGHT_REAR,  gainVal); 
       break;     
   }
   Serial.println(gainVal);

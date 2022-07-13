@@ -3,12 +3,10 @@
 //
 // Created: Eric Yuan, Jan 2020 (Updated by Chip Audette Aug 2021)
 //
-// Purpose: This example is used to test the earpieces.  It routes the front microphone 
-//  (from both earpieces) to the left output, and the rear microphones (from both earpieces)
-//  to the right output.
+// Purpose: This example is used to test the earpieces.  It routes the RIGHT front microphone 
+//  to the left output, and the Right Rear microphones To the right output.
 //
 // The volume pot on the side of the Tympan also controls the overall output volume.
-//
 //
 // MIT License.  Use at your own risk.  Have fun!
 //
@@ -35,14 +33,14 @@ AudioSDWriter_F32       audioSDWriter(audio_settings);  //Write audio to the SD 
 //Connect the front and rear mics (from each earpiece) to input mixer for the left ear
 AudioConnection_F32     patchcord1(i2s_in, EarpieceShield::PDM_LEFT_FRONT,  inputMixerL, 0);    //Left-Front Mic
 AudioConnection_F32     patchcord2(i2s_in, EarpieceShield::PDM_LEFT_REAR,   inputMixerL, 1);    //Left-Rear Mic
-AudioConnection_F32     patchcord3(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerL, 2);    //Right-Front Mic
-AudioConnection_F32     patchcord4(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerL, 3);    //Right-Rear Mic
+//AudioConnection_F32     patchcord3(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerL, 2);    //Right-Front Mic
+//AudioConnection_F32     patchcord4(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerL, 3);    //Right-Rear Mic
 
 //Connect the front and rear mics (from each earpiece) to input mixer for the right ear
 AudioConnection_F32     patchcord5(i2s_in, EarpieceShield::PDM_LEFT_FRONT,  inputMixerR, 0);    //Left-Front Mic
 AudioConnection_F32     patchcord6(i2s_in, EarpieceShield::PDM_LEFT_REAR,   inputMixerR, 1);    //Left-Rear Mic
-AudioConnection_F32     patchcord7(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerR, 2);    //Right-Front Mic
-AudioConnection_F32     patchcord8(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerR, 3);    //Right-Rear Mic
+//AudioConnection_F32     patchcord7(i2s_in, EarpieceShield::PDM_RIGHT_FRONT, inputMixerR, 2);    //Right-Front Mic
+//AudioConnection_F32     patchcord8(i2s_in, EarpieceShield::PDM_RIGHT_REAR,  inputMixerR, 3);    //Right-Rear Mic
 
 //Connect the input mixers to both the Tympan and Shield audio outputs...which i2s output is associated with each audio output is in EarpieceShield.cpp  
 AudioConnection_F32     patchcord11(inputMixerL, 0, i2s_out, EarpieceShield::OUTPUT_LEFT_TYMPAN);    //Tympan AIC, left output
