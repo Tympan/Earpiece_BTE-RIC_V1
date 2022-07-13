@@ -3,8 +3,8 @@
 //
 // Created: Eric Yuan, Jan 2020 (Updated by Chip Audette Aug 2021)
 //
-// Purpose: This example is used to test the earpieces.  It routes the RIGHT front microphone 
-//  to the left output, and the Right Rear microphones To the right output.
+// Purpose: This example is used to test the earpieces.  Plug the earpiece into the port above the black headphone jack; 
+//  the other port is not used.  
 //
 // The volume pot on the side of the Tympan also controls the overall output volume.
 //

@@ -1,6 +1,9 @@
 
 #include "State.h"
 
+//Please note that the "LEFT" mic is above the pink mic jack, 
+//   and the "RIGHT" mic is above the black headphone jack.  
+//   Ignore the labels on the PCB
 #define LEFT_FRONT  0
 #define LEFT_REAR   1
 #define RIGHT_FRONT 2
