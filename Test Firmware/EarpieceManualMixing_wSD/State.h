@@ -1,0 +1,24 @@
+#ifndef State_h
+#define State_h
+
+enum {
+  MIC_FRONT_LEFT=0, 
+  MIC_REAR_LEFT, 
+  MIC_FRONT_RIGHT, 
+  MIC_REAR_RIGHT, 
+  MIC_FRONT_BOTH,
+  MIC_REAR_BOTH,
+  MIC_AIC0,
+  MIC_AIC1,
+  ALL_MICS,
+  MIC_FRONT_TO_LEFT_REAR_TO_RIGHT
+};
+
+enum {
+  INPUT_PCBMICS=0,
+  INPUT_MICJACK_MIC,
+  INPUT_MICJACK_LINEIN,
+  INPUT_PDMMICS
+};
+
+#endif
